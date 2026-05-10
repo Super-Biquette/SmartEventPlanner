@@ -1,0 +1,2 @@
+# SmartEventPlanner
+Web Programming Project

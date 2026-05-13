@@ -1,1 +1,15 @@
-<p>event-details works!</p>
+<div class="container mt-4">
+    @if (event) {
+        <div class="card">
+            <div class="card-body">
+                <h2>{{ event.title }}</h2>
+                <p><strong>Date:</strong> {{ event.date }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <p><strong>Category:</strong> {{ event.category }}</p>
+                <p><strong>Attendees:</strong> {{ event.attendees }}</p>
+                <hr>
+                <p>{{ event.description }}</p>
+            </div>
+        </div>
+    }
+</div>

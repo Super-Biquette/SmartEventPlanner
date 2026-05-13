@@ -1,1 +1,62 @@
-<p>create-event works!</p>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="mb-4">Create New Event</h3>
+            <form (ngSubmit)="addEvent()">
+                <div class="mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Event Title"
+                        [(ngModel)]="title"
+                        name="title"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <input
+                        type="date"
+                        class="form-control"
+                        [(ngModel)]="date"
+                        name="date"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Location"
+                        [(ngModel)]="location"
+                        name="location"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Category"
+                        [(ngModel)]="category"
+                        name="category"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <textarea
+                        class="form-control"
+                        placeholder="Description"
+                        [(ngModel)]="description"
+                        name="description"
+                        required>
+
+                    </textarea>
+                </div>
+
+                <button class="btn btn-primary">
+                    Add Event
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

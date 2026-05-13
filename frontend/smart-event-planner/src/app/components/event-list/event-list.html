@@ -1,6 +1,19 @@
 <div class="container mt-4">
     <h2 class="mb-4">Upcoming Events</h2>
-    @for (event of events; track event._id) 
+    <div class="mb-4">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Search events..."
+            [(ngModel)]="searchText">
+    </div>
+    @if (loading) 
+    {
+        <div class="alert alert-secondary">
+            Loading events...
+        </div>
+    }
+    @for (event of getFilteredEvents(); track event._id) 
     {
         <div class="card mb-3">
             <div class="card-body">
@@ -11,7 +24,9 @@
                 </h4>
                 <p><strong>Date:</strong> {{ event.date }}</p>
                 <p><strong>Location:</strong> {{ event.location }}</p>
-                <p><strong>Category:</strong> {{ event.category }}</p>
+                <span class="badge bg-primary mb-2">
+                    {{ event.category }}
+                </span>
                 <p>{{ event.description }}</p>
                 <button
                     class="btn btn-danger mt-2"
@@ -19,6 +34,13 @@
                     Delete Event
                 </button>
             </div>
+        </div>
+    }
+
+    @if (getFilteredEvents().length === 0 && !loading) 
+    {
+        <div class="alert alert-info">
+            No events found.
         </div>
     }
 </div>
